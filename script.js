@@ -41,3 +41,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+// DISPLAY BOOKINGS
+document.addEventListener("DOMContentLoaded", function () {
+
+    const bookingList = document.getElementById("bookingList");
+
+    if (bookingList) {
+        let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+        if (bookings.length === 0) {
+            bookingList.innerHTML = "<p>No bookings yet.</p>";
+            return;
+        }
+
+        bookings.forEach(function (booking) {
+            let div = document.createElement("div");
+            div.classList.add("booking-card");
+
+            div.innerHTML = `
+                <h3>${booking.name}</h3>
+                <p>Service: ${booking.service}</p>
+                <p>Date: ${booking.date}</p>
+                <p>Time: ${booking.time}</p>
+            `;
+
+            bookingList.appendChild(div);
+        });
+    }
+});
