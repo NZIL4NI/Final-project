@@ -3,37 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beauty booking.app</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Beauty Booking App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- logo -->
-     <p>
-        <a href="/"></a>
-        <h1>BEAUTY BOOKING.APP</h1>
-        <p id="header-p"></p>Booking made reliable and easy at the comfort of your home</p>
-     </header>
-     <!-- Navigation bar -->
-      <nav>
-        <a href="index.html">Home</a>
 
-        <a href="bookings.html">Bookings</a>
+<header>
+    <h1>BEAUTY BOOKING.APP</h1>
+    <p>Booking made reliable and easy at the comfort of your home</p>
+</header>
 
-        <a href="services.html">Services</a>
-      </nav>
-      <!-- bookings -->
-       <section>
-        <h2>Bookings</h2>
-        <input type="text" id="name" placeholder="full name" required>
-        <input type="email" id="email" placeholder="Email" required>
-        <input type="tel" id="tel" placeholder="phone number" required>
-        <select id="services">
-            <option value="services">Select services</option>
-            <option value="Nails">Nails</option>
-            <option value="Lashes">Lashes</option>
-        </select>
-        
-       </section>
-    
+<nav>
+    <a href="index.html">Home</a>
+    <a href="bookings.html">Bookings</a>
+    <a href="services.html">Services</a>
+</nav>
+
+<main>
+    <section>
+        <h2>Book an Appointment</h2>
+
+        <form id="bookingForm">
+
+            <input type="text" id="name" placeholder="Full Name" required>
+
+            <input type="email" id="email" placeholder="Email" required>
+
+            <input type="tel" id="tel" placeholder="Phone Number" required>
+
+            <select id="service" required>
+                <option value="">Select Service</option>
+                <option value="Nails">Nails</option>
+                <option value="Lashes">Lashes</option>
+            </select>
+
+            <input type="date" id="date" required>
+            <input type="time" id="time" required>
+
+            <button type="submit">Book Now</button>
+
+        </form>
+
+        <p id="message"></p>
+
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Beauty Booking</p>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
