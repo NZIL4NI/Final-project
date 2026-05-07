@@ -227,7 +227,7 @@ footer {
     margin-top: 20px;
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
