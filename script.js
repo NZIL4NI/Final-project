@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // ----------------------------
-  // BOOKING FORM (index.html)
-  // ----------------------------
+  // =========================
+  // 1. BOOKING FORM (index.html)
+  // =========================
   const form = document.getElementById("bookingForm");
 
   if (form) {
@@ -45,55 +45,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ----------------------------
-  // DISPLAY BOOKINGS (bookings.html)
-  // ----------------------------
+  // =========================
+  // 2. DISPLAY BOOKINGS (bookings.html)
+  // =========================
   const bookingList = document.getElementById("bookingList");
 
-  if (bookingList) {
-    let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
-
-    if (bookings.length === 0) {
-      bookingList.innerHTML = "<p>No bookings yet.</p>";
-    } else {
-      bookings.forEach(function (booking, index) {
-        let div = document.createElement("div");
-        div.classList.add("booking-card");
-
-        div.innerHTML = `
-                    <h3>${booking.name}</h3>
-                    <p>Email: ${booking.email}</p>
-                    <p>Phone: ${booking.tel}</p>
-                    <p>Service: ${booking.service}</p>
-                    <p>Date: ${booking.date}</p>
-                    <p>Time: ${booking.time}</p>
-
-                    <button onclick="deleteBooking(${index})">Delete</button>
-                `;
-
-        bookingList.appendChild(div);
-      });
-    }
-  }
-});
-
-// ----------------------------
-// DELETE FUNCTION
-// ----------------------------
-function deleteBooking(index) {
-  let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
-
-  bookings.splice(index, 1);
-
-  localStorage.setItem("bookings", JSON.stringify(bookings));
-
-  location.reload();
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  const bookingList = document.getElementById("bookingList");
-
-  // ONLY run on bookings.html
   if (bookingList) {
     let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
 
@@ -122,7 +78,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// DELETE BOOKING FUNCTION
+// =========================
+// 3. DELETE BOOKING
+// =========================
 function deleteBooking(index) {
   let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
 
