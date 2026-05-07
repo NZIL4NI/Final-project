@@ -89,3 +89,46 @@ function deleteBooking(index) {
 
   location.reload();
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const bookingList = document.getElementById("bookingList");
+
+  // ONLY run on bookings.html
+  if (bookingList) {
+    let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+    if (bookings.length === 0) {
+      bookingList.innerHTML = "<p>No bookings yet.</p>";
+      return;
+    }
+
+    bookings.forEach(function (booking, index) {
+      let card = document.createElement("div");
+      card.classList.add("booking-card");
+
+      card.innerHTML = `
+                <h3>${booking.name}</h3>
+                <p><strong>Email:</strong> ${booking.email}</p>
+                <p><strong>Phone:</strong> ${booking.tel}</p>
+                <p><strong>Service:</strong> ${booking.service}</p>
+                <p><strong>Date:</strong> ${booking.date}</p>
+                <p><strong>Time:</strong> ${booking.time}</p>
+
+                <button onclick="deleteBooking(${index})">Delete</button>
+            `;
+
+      bookingList.appendChild(card);
+    });
+  }
+});
+
+// DELETE BOOKING FUNCTION
+function deleteBooking(index) {
+  let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+  bookings.splice(index, 1);
+
+  localStorage.setItem("bookings", JSON.stringify(bookings));
+
+  location.reload();
+}
