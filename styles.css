@@ -115,3 +115,122 @@ footer {
         width: 100%;
     }
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fff0f5;
+    color: #333;
+}
+
+/* HEADER */
+header {
+    background: #ff69b4;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #ffb6c1;
+    padding: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* BOOKING FORM */
+form {
+    background: white;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+input, select, button {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #ff69b4;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff1493;
+}
+
+/* HOME TEXT */
+.home {
+    text-align: center;
+    padding: 20px;
+}
+
+/* GALLERY */
+#gallery {
+    padding: 20px;
+    text-align: center;
+}
+
+#image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+#image-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+#image-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #ff69b4;
+    color: white;
+    margin-top: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+}
+
